@@ -1,0 +1,43 @@
+org: athlane
+app: terminal
+service: TwitterAPI
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  memorySize: 128
+  environment:
+    CLIENT_ID: y7boBxoPz9ik4u1jSUVu0dpUz
+    CLIENT_SECRET: mnxfxbKANvKooHJMFjMOY55gayUHNxasaeddaq00bjGyHT5u8t
+    TOKEN: 1552531590110396416-3KOpQsrYRS9Skh5lBgUb4GXZcxoTsZ
+    TOKEN_SECRET: OvG7rseyOwfGJbMBTyG4FqReTDjiSLiIzZMfZ7qy5N5IZ
+    TWITTER_BASE_URL: https://api.twitter.com
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  stage: ${opt:stage, env:AWS_PROFILE, "staging"}
+  defaultRegion: us-east-1
+  region: ${opt:region, self:custom.defaultRegion}
+  pythonRequirements:
+    dockerizePip: non-linux
+    useStaticCache: false
+
+functions:
+  twitterAPI:
+    handler: handler.twitter
+    module: src
+    vendor: ../../lib/python
+    package:
+      include:
+        - src/**
+    layers:
+      - ${cf:DefaultLayer-${self:custom.stage}.DefaultLayerExport}
+    events:
+      - http:
+          path: /twitter
+          method: GET
+          cors: true

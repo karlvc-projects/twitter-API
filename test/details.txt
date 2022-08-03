@@ -1,0 +1,14 @@
+twitter API key = y7boBxoPz9ik4u1jSUVu0dpUz
+
+secret key = mnxfxbKANvKooHJMFjMOY55gayUHNxasaeddaq00bjGyHT5u8t
+
+bearer token =AAAAAAAAAAAAAAAAAAAAAH8%2FfQEAAA AAmfokPhQ0tGLEorVuPG0OmvMyLVI%3DzhmxmKTeDPT66xBbct5RAw3mkmZ6wCCdS0tl7NZYWthhm2mVyt
+
+access token  =1552531590110396416-3KOpQsrYRS9Skh5lBgUb4GXZcxoTsZ
+
+access token secret = OvG7rseyOwfGJbMBTyG4FqReTDjiSLiIzZMfZ7qy5N5IZ
+
+
+headers = {
+    "Authorization":'OAuth oauth_consumer_key="y7boBxoPz9ik4u1jSUVu0dpUz",oauth_token="1552531590110396416-3KOpQsrYRS9Skh5lBgUb4GXZcxoTsZ",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1659008249",oauth_nonce="P0wd4bgRWwg",oauth_version="1.0",oauth_signature="oDFPY09jRmgBjPeXEM1fwzdALSc%3D"'
+}
